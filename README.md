@@ -111,7 +111,7 @@ struct ContentView: View {
 ## Performance
 
 <p align="center">
-    <img src="Resources/benchmark_result.png">
+    <img src="Resources/benchmark_chart.png">
     Performed by <a href="https://github.com/lucdion/LayoutFrameworkBenchmark">LayoutBenchmarkFramework</a>
 </p>
 
