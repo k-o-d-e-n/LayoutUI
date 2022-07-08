@@ -29,6 +29,7 @@ public struct Width: WidthLayout {
     }
 }
 extension Width {
+    public typealias Current = Empty<Width>
     public struct Constant: RectBasedLayout {
         @usableFromInline
         let value: CGFloat
@@ -41,8 +42,18 @@ extension Width {
             rect.size.width = value
         }
     }
-    public typealias Current = Empty<Width>
-    // TODO: Ratio
+    public struct Ratio: RectBasedLayout {
+        @usableFromInline
+        let value: CGFloat
+        @inlinable
+        @inline(__always)
+        public init(_ value: CGFloat) { self.value = value }
+        @inlinable
+        @inline(__always)
+        public func layout(_ rect: inout CGRect, with source: CGRect) {
+            rect.size.width = rect.height * value
+        }
+    }
 }
 public struct ScaledWidth<Base>: WidthLayout
 where Base: RectBasedLayout {
@@ -92,7 +103,40 @@ extension WidthLayout {
         InsetWidth(self, value: value)
     }
 }
-// TODO: Between layout
+public struct BetweenWidth<Base>: WidthLayout
+where Base: RectBasedLayout {
+    @usableFromInline
+    let base: Base
+    @usableFromInline
+    let value: ClosedRange<CGFloat>
+    @usableFromInline
+    init(_ base: Base, value: ClosedRange<CGFloat>) {
+        self.base = base; self.value = value
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        base.layout(&rect, with: source)
+        rect.size.width = max(value.lowerBound, min(value.upperBound, source.width))
+    }
+}
+extension WidthLayout {
+    @inlinable
+    @inline(__always)
+    public func between(_ value: ClosedRange<CGFloat>) -> BetweenWidth<Self> {
+        BetweenWidth(self, value: value)
+    }
+    @inlinable
+    @inline(__always)
+    public func between(_ value: PartialRangeThrough<CGFloat>) -> BetweenWidth<Self> {
+        BetweenWidth(self, value: 0...value.upperBound)
+    }
+    @inlinable
+    @inline(__always)
+    public func between(_ value: PartialRangeFrom<CGFloat>) -> BetweenWidth<Self> {
+        BetweenWidth(self, value: value.lowerBound ... .greatestFiniteMagnitude)
+    }
+}
 public protocol HeightLayout: RectBasedLayout {}
 extension Print: HeightLayout where Base: HeightLayout {}
 extension Empty: HeightLayout where T: HeightLayout {}
@@ -107,6 +151,7 @@ public struct Height: HeightLayout {
     }
 }
 extension Height {
+    public typealias Current = Empty<Height>
     public struct Constant: RectBasedLayout {
         @usableFromInline
         let value: CGFloat
@@ -119,8 +164,18 @@ extension Height {
             rect.size.height = value
         }
     }
-    public typealias Current = Empty<Height>
-    // TODO: Ratio
+    public struct Ratio: RectBasedLayout {
+        @usableFromInline
+        let value: CGFloat
+        @inlinable
+        @inline(__always)
+        public init(_ value: CGFloat) { self.value = value }
+        @inlinable
+        @inline(__always)
+        public func layout(_ rect: inout CGRect, with source: CGRect) {
+            rect.size.height = rect.width * value
+        }
+    }
 }
 public struct ScaledHeight<Base>: HeightLayout
 where Base: RectBasedLayout {
@@ -170,18 +225,53 @@ extension HeightLayout {
         InsetHeight(self, value: value)
     }
 }
-// TODO: Between layout
+public struct BetweenHeight<Base>: HeightLayout
+where Base: RectBasedLayout {
+    @usableFromInline
+    let base: Base
+    @usableFromInline
+    let value: ClosedRange<CGFloat>
+    @usableFromInline
+    init(_ base: Base, value: ClosedRange<CGFloat>) {
+        self.base = base; self.value = value
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        base.layout(&rect, with: source)
+        rect.size.height = max(value.lowerBound, min(value.upperBound, source.height))
+    }
+}
+extension HeightLayout {
+    @inlinable
+    @inline(__always)
+    public func between(_ value: ClosedRange<CGFloat>) -> BetweenHeight<Self> {
+        BetweenHeight(self, value: value)
+    }
+    @inlinable
+    @inline(__always)
+    public func between(_ value: PartialRangeThrough<CGFloat>) -> BetweenHeight<Self> {
+        BetweenHeight(self, value: 0...value.upperBound)
+    }
+    @inlinable
+    @inline(__always)
+    public func between(_ value: PartialRangeFrom<CGFloat>) -> BetweenHeight<Self> {
+        BetweenHeight(self, value: value.lowerBound ... .greatestFiniteMagnitude)
+    }
+}
 
 public protocol MinXLayout: RectBasedLayout {}
 extension Print: MinXLayout where Base: MinXLayout {}
 public enum MinX {}
 extension MinX {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension MinX.Align {
+extension MinX.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias MaxX = LayoutUI.MinX.Before.Align
     public typealias MinX = LayoutUI.MinX.After.Align
     public typealias MidX = LayoutUI.MinX.Center.Align
@@ -245,14 +335,39 @@ extension MinXLayout {
         MinXOffset(self, value: value)
     }
 }
+public struct MinXOffsetMultiplier<Base>: MinXLayout where Base: RectBasedLayout {
+    @usableFromInline
+    let base: Base
+    @usableFromInline
+    let value: CGFloat
+    @usableFromInline
+    init(_ base: Base, value: CGFloat) {
+        self.base = base; self.value = value
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        base.layout(&rect, with: source)
+        rect.origin.x += source.width * value
+    }
+}
+extension MinXLayout {
+    @inlinable
+    @inline(__always)
+    public func offset(multiplier value: CGFloat) -> MinXOffsetMultiplier<Self> {
+        MinXOffsetMultiplier(self, value: value)
+    }
+}
 public enum MaxX {}
 extension MaxX {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension MaxX.Align {
+extension MaxX.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias MaxX = LayoutUI.MaxX.Before.Align
     public typealias MinX = LayoutUI.MaxX.After.Align
     public typealias MidX = LayoutUI.MaxX.Center.Align
@@ -300,12 +415,14 @@ public protocol MinYLayout: RectBasedLayout {}
 extension Print: MinYLayout where Base: MinYLayout {}
 public enum MinY {}
 extension MinY {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension MinY.Align {
+extension MinY.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias MaxY = LayoutUI.MinY.Before.Align
     public typealias MinY = LayoutUI.MinY.After.Align
     public typealias MidY = LayoutUI.MinY.Center.Align
@@ -369,14 +486,39 @@ extension MinYLayout {
         MinYOffset(self, value: value)
     }
 }
+public struct MinYOffsetMultiplier<Base>: MinYLayout where Base: RectBasedLayout {
+    @usableFromInline
+    let base: Base
+    @usableFromInline
+    let value: CGFloat
+    @usableFromInline
+    init(_ base: Base, value: CGFloat) {
+        self.base = base; self.value = value
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        base.layout(&rect, with: source)
+        rect.origin.y += source.height * value
+    }
+}
+extension MinYLayout {
+    @inlinable
+    @inline(__always)
+    public func offset(multiplier value: CGFloat) -> MinYOffsetMultiplier<Self> {
+        MinYOffsetMultiplier(self, value: value)
+    }
+}
 public enum MaxY {}
 extension MaxY {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension MaxY.Align {
+extension MaxY.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias MaxY = LayoutUI.MaxY.Before.Align
     public typealias MinY = LayoutUI.MaxY.After.Align
     public typealias MidY = LayoutUI.MaxY.Center.Align
@@ -422,12 +564,14 @@ extension MaxY.After.Align: MinYLayout {}
 extension MaxY.Center.Align: MinYLayout {}
 public enum MidX {}
 extension MidX {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension MidX.Align {
+extension MidX.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias MaxX = LayoutUI.MidX.Before.Align
     public typealias MinX = LayoutUI.MidX.After.Align
     public typealias MidX = LayoutUI.MidX.Center.Align
@@ -473,12 +617,14 @@ extension MidX.After.Align: MinXLayout {}
 extension MidX.Center.Align: MinXLayout {}
 public enum MidY {}
 extension MidY {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension MidY.Align {
+extension MidY.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias MaxY = LayoutUI.MidY.Before.Align
     public typealias MinY = LayoutUI.MidY.After.Align
     public typealias MidY = LayoutUI.MidY.Center.Align

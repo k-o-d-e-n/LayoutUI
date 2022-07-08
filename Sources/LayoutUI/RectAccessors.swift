@@ -5,7 +5,11 @@
 //  Created by Denis Koryttsev on 21.06.2022.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
+import CoreGraphics
+#else
 import Foundation
+#endif
 
 public protocol RectAccessor {
     associatedtype View

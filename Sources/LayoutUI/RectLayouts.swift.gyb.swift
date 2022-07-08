@@ -20,6 +20,9 @@ public typealias CenterX = MidX.Center.Align
 public typealias CenterY = MidY.Center.Align
 
 % for element in size_elements:
+%{
+contr_element = 'Width' if element == 'Height' else 'Height'
+}%
 public protocol ${element}Layout: RectBasedLayout {}
 extension Print: ${element}Layout where Base: ${element}Layout {}
 extension Empty: ${element}Layout where T: ${element}Layout {}
@@ -34,6 +37,7 @@ public struct ${element}: ${element}Layout {
     }
 }
 extension ${element} {
+    public typealias Current = Empty<${element}>
     public struct Constant: RectBasedLayout {
         @usableFromInline
         let value: CGFloat
@@ -46,8 +50,18 @@ extension ${element} {
             rect.size.${element.lower()} = value
         }
     }
-    public typealias Current = Empty<${element}>
-    // TODO: Ratio
+    public struct Ratio: RectBasedLayout {
+        @usableFromInline
+        let value: CGFloat
+        @inlinable
+        @inline(__always)
+        public init(_ value: CGFloat) { self.value = value }
+        @inlinable
+        @inline(__always)
+        public func layout(_ rect: inout CGRect, with source: CGRect) {
+            rect.size.${element.lower()} = rect.${contr_element.lower()} * value
+        }
+    }
 }
 public struct Scaled${element}<Base>: ${element}Layout
 where Base: RectBasedLayout {
@@ -97,7 +111,40 @@ extension ${element}Layout {
         Inset${element}(self, value: value)
     }
 }
-// TODO: Between layout
+public struct Between${element}<Base>: ${element}Layout
+where Base: RectBasedLayout {
+    @usableFromInline
+    let base: Base
+    @usableFromInline
+    let value: ClosedRange<CGFloat>
+    @usableFromInline
+    init(_ base: Base, value: ClosedRange<CGFloat>) {
+        self.base = base; self.value = value
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        base.layout(&rect, with: source)
+        rect.size.${element.lower()} = max(value.lowerBound, min(value.upperBound, source.${element.lower()}))
+    }
+}
+extension ${element}Layout {
+    @inlinable
+    @inline(__always)
+    public func between(_ value: ClosedRange<CGFloat>) -> Between${element}<Self> {
+        Between${element}(self, value: value)
+    }
+    @inlinable
+    @inline(__always)
+    public func between(_ value: PartialRangeThrough<CGFloat>) -> Between${element}<Self> {
+        Between${element}(self, value: 0...value.upperBound)
+    }
+    @inlinable
+    @inline(__always)
+    public func between(_ value: PartialRangeFrom<CGFloat>) -> Between${element}<Self> {
+        Between${element}(self, value: value.lowerBound ... .greatestFiniteMagnitude)
+    }
+}
 % end
 
 % for element in side_elements:
@@ -123,12 +170,14 @@ anchor2_typealias = element if ismin else _contrside if not ismid else 'Min' + a
 anchor2_typealias_value = 'After'
 }%
 extension ${element} {
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum Before {}
+    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
     public enum After {}
     public enum Center {}
     public enum Align {}
 }
-extension ${element}.Align {
+extension ${element}.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
     public typealias ${anchor1_typealias} = LayoutUI.${element}.${anchor1_typealias_value}.Align
     public typealias ${anchor2_typealias} = LayoutUI.${element}.${anchor2_typealias_value}.Align
     public typealias Mid${axis} = LayoutUI.${element}.Center.Align
@@ -200,6 +249,29 @@ extension ${element}Layout {
     @inline(__always)
     public func offset(_ value: CGFloat) -> ${element}Offset<Self> {
         ${element}Offset(self, value: value)
+    }
+}
+public struct ${element}OffsetMultiplier<Base>: ${element}Layout where Base: RectBasedLayout {
+    @usableFromInline
+    let base: Base
+    @usableFromInline
+    let value: CGFloat
+    @usableFromInline
+    init(_ base: Base, value: CGFloat) {
+        self.base = base; self.value = value
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        base.layout(&rect, with: source)
+        rect.origin.${element[-1].lower()} += source.${dimension} * value
+    }
+}
+extension ${element}Layout {
+    @inlinable
+    @inline(__always)
+    public func offset(multiplier value: CGFloat) -> ${element}OffsetMultiplier<Self> {
+        ${element}OffsetMultiplier(self, value: value)
     }
 }
 % else:

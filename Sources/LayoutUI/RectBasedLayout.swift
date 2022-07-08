@@ -65,18 +65,3 @@ public struct Equal: RectBasedLayout {
         rect = source
     }
 }
-
-extension Height {
-    public struct Ratio: RectBasedLayout { // TODO: 
-        @usableFromInline
-        let value: CGFloat
-        @inlinable
-        @inline(__always)
-        public init(_ value: CGFloat) { self.value = value }
-        @inlinable
-        @inline(__always)
-        public func layout(_ rect: inout CGRect, with source: CGRect) {
-            rect.size.height = rect.size.width * value
-        }
-    }
-}

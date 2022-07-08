@@ -77,6 +77,22 @@ public struct OptionalViewBasedLayout<Wrapped>: ViewBasedLayout where Wrapped: V
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: Wrapped.View, in source: CGRect) {
+        switch wrapped {
+        case .some(let layout): layout.layout(to: &rect, with: view, in: source)
+        case .none: break
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public func apply(_ rect: CGRect, for view: Wrapped.View) {
+        switch wrapped {
+        case .some(let layout): layout.apply(rect, for: view)
+        case .none: break
+        }
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snap: inout LayoutSnapshot, with view: Wrapped.View, in source: CGRect) {
         switch wrapped {
         case .some(let layout): layout.layout(to: &snap, with: view, in: source)
@@ -94,6 +110,7 @@ public struct OptionalViewBasedLayout<Wrapped>: ViewBasedLayout where Wrapped: V
 }
 extension OptionalViewBasedLayout: Layout where Wrapped: Layout {}
 public struct _ConditionalViewBasedLayout<TrueLayout, FalseLayout>: ViewBasedLayout where TrueLayout: ViewBasedLayout, FalseLayout: ViewBasedLayout, TrueLayout.View == FalseLayout.View {
+    public typealias View = TrueLayout.View
     @usableFromInline
     let condition: Condition
     @usableFromInline
@@ -109,6 +126,22 @@ public struct _ConditionalViewBasedLayout<TrueLayout, FalseLayout>: ViewBasedLay
         switch condition {
         case .first(let layout): layout.layout(view, in: source)
         case .second(let layout): layout.layout(view, in: source)
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public func layout(to rect: inout CGRect, with view: TrueLayout.View, in source: CGRect) {
+        switch condition {
+        case .first(let layout): layout.layout(to: &rect, with: view, in: source)
+        case .second(let layout): layout.layout(to: &rect, with: view, in: source)
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public func apply(_ rect: CGRect, for view: TrueLayout.View) {
+        switch condition {
+        case .first(let layout): layout.apply(rect, for: view)
+        case .second(let layout): layout.apply(rect, for: view)
         }
     }
     @inlinable

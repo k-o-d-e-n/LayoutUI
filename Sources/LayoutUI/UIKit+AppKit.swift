@@ -56,12 +56,6 @@ extension _KeyPathFittingMutator: RectMutator where Subview: _SystemView {
 extension _KeyPathFittingMutator: FittingSizeMutator where Subview: _SystemFittingView {
     @inlinable
     @inline(__always)
-    public subscript(view: View) -> CGRect {
-        get { view[keyPath: keyPath].frame }
-        nonmutating set { view[keyPath: keyPath].frame = newValue }
-    }
-    @inlinable
-    @inline(__always)
     public func fittingSize(for view: View, with availableSize: CGSize) -> CGSize {
         view[keyPath: keyPath].sizeThatFits(availableSize)
     }
@@ -102,7 +96,7 @@ extension FittingRect {
     }
     @inlinable
     @inline(__always)
-    public init<View, Subview, Cache>(_ keyPath: KeyPath<View, Subview>, cache: Cache, id: Int, @LayoutBuilder schemeBuilder: () -> Scheme) where Mutator == Cached<_KeyPathFittingMutator<View, Subview>, Cache>, Cache: CacheContainer {
+    public init<View, Subview, Cache>(_ keyPath: KeyPath<View, Subview>, cache: Cache, id: Int, @LayoutBuilder schemeBuilder: () -> Scheme) where Mutator == Cached<_KeyPathFittingMutator<View, Subview>, Cache> {
         self.id = id
         self.mutator = Cached(id: id, base: _KeyPathFittingMutator(keyPath: keyPath), cache: cache)
         self.scheme = schemeBuilder()

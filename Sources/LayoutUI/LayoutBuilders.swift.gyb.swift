@@ -10,7 +10,7 @@ import CoreGraphics
 
 /// MARK: - RectBasedLayout
 
-% for count in type_names:
+% for count in (y for y in type_names if y <= 10):
 public struct ${type_names[count]}RectLayout<${', '.join(elements[:count])}>: RectBasedLayout
 where ${', '.join(map(lambda x: x + ': RectBasedLayout', elements[:count]))} {
     % for i in range(0, count):
@@ -34,7 +34,7 @@ where ${', '.join(map(lambda x: x + ': RectBasedLayout', elements[:count]))} {
 % end
 
 extension LayoutBuilder {
-    % for count in type_names:
+    % for count in (y for y in type_names if y <= 10):
     @inlinable
     @inline(__always)
     public static func buildBlock<${', '.join(elements[:count])}>(
@@ -47,11 +47,12 @@ extension LayoutBuilder {
 
 /// MARK: - ViewBasedLayout
 
-% for count in type_names:
+% for count in (y for y in type_names if y <= 15):
 public struct ${type_names[count]}ViewLayout<${', '.join(elements[:count])}>: ViewBasedLayout
 where ${', '.join(map(lambda x: x + ': ViewBasedLayout', elements[:count]))},
 ${', '.join(map(lambda x: x + '.View == C0.View', elements[1:count]))}
 {
+    public typealias View = C0.View
     % for i in range(0, count):
     @usableFromInline
     let c${i}: C${i}
@@ -71,6 +72,15 @@ ${', '.join(map(lambda x: x + '.View == C0.View', elements[1:count]))}
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        % for i in range(0, count):
+        var r${i} = source; c${i}.layout(to: &r${i}, with: view, in: source); unionRect = unionRect.union(r${i})
+        % end
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         % for i in range(0, count):
         c${i}.layout(to: &snapshot, with: view, in: source)
@@ -85,10 +95,73 @@ ${', '.join(map(lambda x: x + '.View == C0.View', elements[1:count]))}
     }
 }
 extension ${type_names[count]}ViewLayout: Layout where C0.View == Void {}
+extension ${type_names[count]}ViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case ${', '.join(map(lambda x: x.lower() + '(' + x + ')', elements[:count]))}
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            % for i in range(0, count):
+            case .c${i}(let c${i}): return c${i}.id
+            % end
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            % for i in range(0, count):
+            case .c${i}(let c${i}): return c${i}.isFixedWidth
+            % end
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            % for i in range(0, count):
+            case .c${i}(let c${i}): return c${i}.isFixedHeight
+            % end
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            % for i in range(0, count):
+            case .c${i}(let c${i}): c${i}.layout(to: &rect, with: view, in: source)
+            % end
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            % for i in range(0, count):
+            case .c${i}(let c${i}): c${i}.apply(rect, for: view)
+            % end
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { ${count} }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        % for i in range(0, count):
+        case ${i}: return .c${i}(c${i})
+        % end
+        default: fatalError("Index out of range")
+        }
+    }
+}
 % end
 
 extension LayoutBuilder {
-    % for count in type_names:
+    % for count in (y for y in type_names if y <= 15):
     @inlinable
     @inline(__always)
     public static func buildBlock<${', '.join(elements[:count])}>(

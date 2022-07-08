@@ -312,316 +312,6 @@ where C0: RectBasedLayout, C1: RectBasedLayout, C2: RectBasedLayout, C3: RectBas
         c9.layout(&rect, with: source)
     }
 }
-public struct ElevenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>: RectBasedLayout
-where C0: RectBasedLayout, C1: RectBasedLayout, C2: RectBasedLayout, C3: RectBasedLayout, C4: RectBasedLayout, C5: RectBasedLayout, C6: RectBasedLayout, C7: RectBasedLayout, C8: RectBasedLayout, C9: RectBasedLayout, C10: RectBasedLayout {
-    @usableFromInline
-    let c0: C0
-    @usableFromInline
-    let c1: C1
-    @usableFromInline
-    let c2: C2
-    @usableFromInline
-    let c3: C3
-    @usableFromInline
-    let c4: C4
-    @usableFromInline
-    let c5: C5
-    @usableFromInline
-    let c6: C6
-    @usableFromInline
-    let c7: C7
-    @usableFromInline
-    let c8: C8
-    @usableFromInline
-    let c9: C9
-    @usableFromInline
-    let c10: C10
-    @usableFromInline
-    init(c0: C0, c1: C1, c2: C2, c3: C3, c4: C4, c5: C5, c6: C6, c7: C7, c8: C8, c9: C9, c10: C10) {
-        self.c0 = c0
-        self.c1 = c1
-        self.c2 = c2
-        self.c3 = c3
-        self.c4 = c4
-        self.c5 = c5
-        self.c6 = c6
-        self.c7 = c7
-        self.c8 = c8
-        self.c9 = c9
-        self.c10 = c10
-    }
-    @inlinable
-    @inline(__always)
-    public func layout(_ rect: inout CGRect, with source: CGRect) {
-        c0.layout(&rect, with: source)
-        c1.layout(&rect, with: source)
-        c2.layout(&rect, with: source)
-        c3.layout(&rect, with: source)
-        c4.layout(&rect, with: source)
-        c5.layout(&rect, with: source)
-        c6.layout(&rect, with: source)
-        c7.layout(&rect, with: source)
-        c8.layout(&rect, with: source)
-        c9.layout(&rect, with: source)
-        c10.layout(&rect, with: source)
-    }
-}
-public struct TwelveRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11>: RectBasedLayout
-where C0: RectBasedLayout, C1: RectBasedLayout, C2: RectBasedLayout, C3: RectBasedLayout, C4: RectBasedLayout, C5: RectBasedLayout, C6: RectBasedLayout, C7: RectBasedLayout, C8: RectBasedLayout, C9: RectBasedLayout, C10: RectBasedLayout, C11: RectBasedLayout {
-    @usableFromInline
-    let c0: C0
-    @usableFromInline
-    let c1: C1
-    @usableFromInline
-    let c2: C2
-    @usableFromInline
-    let c3: C3
-    @usableFromInline
-    let c4: C4
-    @usableFromInline
-    let c5: C5
-    @usableFromInline
-    let c6: C6
-    @usableFromInline
-    let c7: C7
-    @usableFromInline
-    let c8: C8
-    @usableFromInline
-    let c9: C9
-    @usableFromInline
-    let c10: C10
-    @usableFromInline
-    let c11: C11
-    @usableFromInline
-    init(c0: C0, c1: C1, c2: C2, c3: C3, c4: C4, c5: C5, c6: C6, c7: C7, c8: C8, c9: C9, c10: C10, c11: C11) {
-        self.c0 = c0
-        self.c1 = c1
-        self.c2 = c2
-        self.c3 = c3
-        self.c4 = c4
-        self.c5 = c5
-        self.c6 = c6
-        self.c7 = c7
-        self.c8 = c8
-        self.c9 = c9
-        self.c10 = c10
-        self.c11 = c11
-    }
-    @inlinable
-    @inline(__always)
-    public func layout(_ rect: inout CGRect, with source: CGRect) {
-        c0.layout(&rect, with: source)
-        c1.layout(&rect, with: source)
-        c2.layout(&rect, with: source)
-        c3.layout(&rect, with: source)
-        c4.layout(&rect, with: source)
-        c5.layout(&rect, with: source)
-        c6.layout(&rect, with: source)
-        c7.layout(&rect, with: source)
-        c8.layout(&rect, with: source)
-        c9.layout(&rect, with: source)
-        c10.layout(&rect, with: source)
-        c11.layout(&rect, with: source)
-    }
-}
-public struct ThirteenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12>: RectBasedLayout
-where C0: RectBasedLayout, C1: RectBasedLayout, C2: RectBasedLayout, C3: RectBasedLayout, C4: RectBasedLayout, C5: RectBasedLayout, C6: RectBasedLayout, C7: RectBasedLayout, C8: RectBasedLayout, C9: RectBasedLayout, C10: RectBasedLayout, C11: RectBasedLayout, C12: RectBasedLayout {
-    @usableFromInline
-    let c0: C0
-    @usableFromInline
-    let c1: C1
-    @usableFromInline
-    let c2: C2
-    @usableFromInline
-    let c3: C3
-    @usableFromInline
-    let c4: C4
-    @usableFromInline
-    let c5: C5
-    @usableFromInline
-    let c6: C6
-    @usableFromInline
-    let c7: C7
-    @usableFromInline
-    let c8: C8
-    @usableFromInline
-    let c9: C9
-    @usableFromInline
-    let c10: C10
-    @usableFromInline
-    let c11: C11
-    @usableFromInline
-    let c12: C12
-    @usableFromInline
-    init(c0: C0, c1: C1, c2: C2, c3: C3, c4: C4, c5: C5, c6: C6, c7: C7, c8: C8, c9: C9, c10: C10, c11: C11, c12: C12) {
-        self.c0 = c0
-        self.c1 = c1
-        self.c2 = c2
-        self.c3 = c3
-        self.c4 = c4
-        self.c5 = c5
-        self.c6 = c6
-        self.c7 = c7
-        self.c8 = c8
-        self.c9 = c9
-        self.c10 = c10
-        self.c11 = c11
-        self.c12 = c12
-    }
-    @inlinable
-    @inline(__always)
-    public func layout(_ rect: inout CGRect, with source: CGRect) {
-        c0.layout(&rect, with: source)
-        c1.layout(&rect, with: source)
-        c2.layout(&rect, with: source)
-        c3.layout(&rect, with: source)
-        c4.layout(&rect, with: source)
-        c5.layout(&rect, with: source)
-        c6.layout(&rect, with: source)
-        c7.layout(&rect, with: source)
-        c8.layout(&rect, with: source)
-        c9.layout(&rect, with: source)
-        c10.layout(&rect, with: source)
-        c11.layout(&rect, with: source)
-        c12.layout(&rect, with: source)
-    }
-}
-public struct FourteenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13>: RectBasedLayout
-where C0: RectBasedLayout, C1: RectBasedLayout, C2: RectBasedLayout, C3: RectBasedLayout, C4: RectBasedLayout, C5: RectBasedLayout, C6: RectBasedLayout, C7: RectBasedLayout, C8: RectBasedLayout, C9: RectBasedLayout, C10: RectBasedLayout, C11: RectBasedLayout, C12: RectBasedLayout, C13: RectBasedLayout {
-    @usableFromInline
-    let c0: C0
-    @usableFromInline
-    let c1: C1
-    @usableFromInline
-    let c2: C2
-    @usableFromInline
-    let c3: C3
-    @usableFromInline
-    let c4: C4
-    @usableFromInline
-    let c5: C5
-    @usableFromInline
-    let c6: C6
-    @usableFromInline
-    let c7: C7
-    @usableFromInline
-    let c8: C8
-    @usableFromInline
-    let c9: C9
-    @usableFromInline
-    let c10: C10
-    @usableFromInline
-    let c11: C11
-    @usableFromInline
-    let c12: C12
-    @usableFromInline
-    let c13: C13
-    @usableFromInline
-    init(c0: C0, c1: C1, c2: C2, c3: C3, c4: C4, c5: C5, c6: C6, c7: C7, c8: C8, c9: C9, c10: C10, c11: C11, c12: C12, c13: C13) {
-        self.c0 = c0
-        self.c1 = c1
-        self.c2 = c2
-        self.c3 = c3
-        self.c4 = c4
-        self.c5 = c5
-        self.c6 = c6
-        self.c7 = c7
-        self.c8 = c8
-        self.c9 = c9
-        self.c10 = c10
-        self.c11 = c11
-        self.c12 = c12
-        self.c13 = c13
-    }
-    @inlinable
-    @inline(__always)
-    public func layout(_ rect: inout CGRect, with source: CGRect) {
-        c0.layout(&rect, with: source)
-        c1.layout(&rect, with: source)
-        c2.layout(&rect, with: source)
-        c3.layout(&rect, with: source)
-        c4.layout(&rect, with: source)
-        c5.layout(&rect, with: source)
-        c6.layout(&rect, with: source)
-        c7.layout(&rect, with: source)
-        c8.layout(&rect, with: source)
-        c9.layout(&rect, with: source)
-        c10.layout(&rect, with: source)
-        c11.layout(&rect, with: source)
-        c12.layout(&rect, with: source)
-        c13.layout(&rect, with: source)
-    }
-}
-public struct FifteenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14>: RectBasedLayout
-where C0: RectBasedLayout, C1: RectBasedLayout, C2: RectBasedLayout, C3: RectBasedLayout, C4: RectBasedLayout, C5: RectBasedLayout, C6: RectBasedLayout, C7: RectBasedLayout, C8: RectBasedLayout, C9: RectBasedLayout, C10: RectBasedLayout, C11: RectBasedLayout, C12: RectBasedLayout, C13: RectBasedLayout, C14: RectBasedLayout {
-    @usableFromInline
-    let c0: C0
-    @usableFromInline
-    let c1: C1
-    @usableFromInline
-    let c2: C2
-    @usableFromInline
-    let c3: C3
-    @usableFromInline
-    let c4: C4
-    @usableFromInline
-    let c5: C5
-    @usableFromInline
-    let c6: C6
-    @usableFromInline
-    let c7: C7
-    @usableFromInline
-    let c8: C8
-    @usableFromInline
-    let c9: C9
-    @usableFromInline
-    let c10: C10
-    @usableFromInline
-    let c11: C11
-    @usableFromInline
-    let c12: C12
-    @usableFromInline
-    let c13: C13
-    @usableFromInline
-    let c14: C14
-    @usableFromInline
-    init(c0: C0, c1: C1, c2: C2, c3: C3, c4: C4, c5: C5, c6: C6, c7: C7, c8: C8, c9: C9, c10: C10, c11: C11, c12: C12, c13: C13, c14: C14) {
-        self.c0 = c0
-        self.c1 = c1
-        self.c2 = c2
-        self.c3 = c3
-        self.c4 = c4
-        self.c5 = c5
-        self.c6 = c6
-        self.c7 = c7
-        self.c8 = c8
-        self.c9 = c9
-        self.c10 = c10
-        self.c11 = c11
-        self.c12 = c12
-        self.c13 = c13
-        self.c14 = c14
-    }
-    @inlinable
-    @inline(__always)
-    public func layout(_ rect: inout CGRect, with source: CGRect) {
-        c0.layout(&rect, with: source)
-        c1.layout(&rect, with: source)
-        c2.layout(&rect, with: source)
-        c3.layout(&rect, with: source)
-        c4.layout(&rect, with: source)
-        c5.layout(&rect, with: source)
-        c6.layout(&rect, with: source)
-        c7.layout(&rect, with: source)
-        c8.layout(&rect, with: source)
-        c9.layout(&rect, with: source)
-        c10.layout(&rect, with: source)
-        c11.layout(&rect, with: source)
-        c12.layout(&rect, with: source)
-        c13.layout(&rect, with: source)
-        c14.layout(&rect, with: source)
-    }
-}
 
 extension LayoutBuilder {
     @inlinable
@@ -687,41 +377,6 @@ extension LayoutBuilder {
     ) -> TenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9> {
         TenRectLayout(c0: c0, c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, c6: c6, c7: c7, c8: c8, c9: c9)
     }
-    @inlinable
-    @inline(__always)
-    public static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>(
-    _ c0: C0, _ c1: C1, _ c2: C2, _ c3: C3, _ c4: C4, _ c5: C5, _ c6: C6, _ c7: C7, _ c8: C8, _ c9: C9, _ c10: C10
-    ) -> ElevenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10> {
-        ElevenRectLayout(c0: c0, c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, c6: c6, c7: c7, c8: c8, c9: c9, c10: c10)
-    }
-    @inlinable
-    @inline(__always)
-    public static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11>(
-    _ c0: C0, _ c1: C1, _ c2: C2, _ c3: C3, _ c4: C4, _ c5: C5, _ c6: C6, _ c7: C7, _ c8: C8, _ c9: C9, _ c10: C10, _ c11: C11
-    ) -> TwelveRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11> {
-        TwelveRectLayout(c0: c0, c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, c6: c6, c7: c7, c8: c8, c9: c9, c10: c10, c11: c11)
-    }
-    @inlinable
-    @inline(__always)
-    public static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12>(
-    _ c0: C0, _ c1: C1, _ c2: C2, _ c3: C3, _ c4: C4, _ c5: C5, _ c6: C6, _ c7: C7, _ c8: C8, _ c9: C9, _ c10: C10, _ c11: C11, _ c12: C12
-    ) -> ThirteenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12> {
-        ThirteenRectLayout(c0: c0, c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, c6: c6, c7: c7, c8: c8, c9: c9, c10: c10, c11: c11, c12: c12)
-    }
-    @inlinable
-    @inline(__always)
-    public static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13>(
-    _ c0: C0, _ c1: C1, _ c2: C2, _ c3: C3, _ c4: C4, _ c5: C5, _ c6: C6, _ c7: C7, _ c8: C8, _ c9: C9, _ c10: C10, _ c11: C11, _ c12: C12, _ c13: C13
-    ) -> FourteenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13> {
-        FourteenRectLayout(c0: c0, c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, c6: c6, c7: c7, c8: c8, c9: c9, c10: c10, c11: c11, c12: c12, c13: c13)
-    }
-    @inlinable
-    @inline(__always)
-    public static func buildBlock<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14>(
-    _ c0: C0, _ c1: C1, _ c2: C2, _ c3: C3, _ c4: C4, _ c5: C5, _ c6: C6, _ c7: C7, _ c8: C8, _ c9: C9, _ c10: C10, _ c11: C11, _ c12: C12, _ c13: C13, _ c14: C14
-    ) -> FifteenRectLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14> {
-        FifteenRectLayout(c0: c0, c1: c1, c2: c2, c3: c3, c4: c4, c5: c5, c6: c6, c7: c7, c8: c8, c9: c9, c10: c10, c11: c11, c12: c12, c13: c13, c14: c14)
-    }
 }
 
 /// MARK: - ViewBasedLayout
@@ -730,6 +385,7 @@ public struct TwoViewLayout<C0, C1>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout,
 C1.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -747,6 +403,14 @@ C1.View == C0.View
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -759,10 +423,68 @@ C1.View == C0.View
     }
 }
 extension TwoViewLayout: Layout where C0.View == Void {}
+extension TwoViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 2 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct ThreeViewLayout<C0, C1, C2>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -784,6 +506,15 @@ C1.View == C0.View, C2.View == C0.View
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -798,10 +529,74 @@ C1.View == C0.View, C2.View == C0.View
     }
 }
 extension ThreeViewLayout: Layout where C0.View == Void {}
+extension ThreeViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 3 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct FourViewLayout<C0, C1, C2, C3>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -827,6 +622,16 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -843,10 +648,80 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View
     }
 }
 extension FourViewLayout: Layout where C0.View == Void {}
+extension FourViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 4 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct FiveViewLayout<C0, C1, C2, C3, C4>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -876,6 +751,17 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -894,10 +780,86 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View
     }
 }
 extension FiveViewLayout: Layout where C0.View == Void {}
+extension FiveViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 5 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct SixViewLayout<C0, C1, C2, C3, C4, C5>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -931,6 +893,18 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -951,10 +925,92 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension SixViewLayout: Layout where C0.View == Void {}
+extension SixViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 6 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct SevenViewLayout<C0, C1, C2, C3, C4, C5, C6>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -992,6 +1048,19 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1014,10 +1083,98 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension SevenViewLayout: Layout where C0.View == Void {}
+extension SevenViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 7 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct EightViewLayout<C0, C1, C2, C3, C4, C5, C6, C7>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1059,6 +1216,20 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1083,10 +1254,104 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension EightViewLayout: Layout where C0.View == Void {}
+extension EightViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 8 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct NineViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1132,6 +1397,21 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1158,10 +1438,110 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension NineViewLayout: Layout where C0.View == Void {}
+extension NineViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 9 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct TenViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout, C9: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View, C9.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1211,6 +1591,22 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        var r9 = source; c9.layout(to: &r9, with: view, in: source); unionRect = unionRect.union(r9)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1239,10 +1635,116 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension TenViewLayout: Layout where C0.View == Void {}
+extension TenViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8), c9(C9)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            case .c9(let c9): return c9.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            case .c9(let c9): return c9.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            case .c9(let c9): return c9.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            case .c9(let c9): c9.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            case .c9(let c9): c9.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 10 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        case 9: return .c9(c9)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct ElevenViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout, C9: ViewBasedLayout, C10: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View, C9.View == C0.View, C10.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1296,6 +1798,23 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        var r9 = source; c9.layout(to: &r9, with: view, in: source); unionRect = unionRect.union(r9)
+        var r10 = source; c10.layout(to: &r10, with: view, in: source); unionRect = unionRect.union(r10)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1326,10 +1845,122 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension ElevenViewLayout: Layout where C0.View == Void {}
+extension ElevenViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8), c9(C9), c10(C10)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            case .c9(let c9): return c9.id
+            case .c10(let c10): return c10.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            case .c9(let c9): return c9.isFixedWidth
+            case .c10(let c10): return c10.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            case .c9(let c9): return c9.isFixedHeight
+            case .c10(let c10): return c10.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            case .c9(let c9): c9.layout(to: &rect, with: view, in: source)
+            case .c10(let c10): c10.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            case .c9(let c9): c9.apply(rect, for: view)
+            case .c10(let c10): c10.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 11 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        case 9: return .c9(c9)
+        case 10: return .c10(c10)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct TwelveViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout, C9: ViewBasedLayout, C10: ViewBasedLayout, C11: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View, C9.View == C0.View, C10.View == C0.View, C11.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1387,6 +2018,24 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        var r9 = source; c9.layout(to: &r9, with: view, in: source); unionRect = unionRect.union(r9)
+        var r10 = source; c10.layout(to: &r10, with: view, in: source); unionRect = unionRect.union(r10)
+        var r11 = source; c11.layout(to: &r11, with: view, in: source); unionRect = unionRect.union(r11)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1419,10 +2068,128 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension TwelveViewLayout: Layout where C0.View == Void {}
+extension TwelveViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8), c9(C9), c10(C10), c11(C11)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            case .c9(let c9): return c9.id
+            case .c10(let c10): return c10.id
+            case .c11(let c11): return c11.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            case .c9(let c9): return c9.isFixedWidth
+            case .c10(let c10): return c10.isFixedWidth
+            case .c11(let c11): return c11.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            case .c9(let c9): return c9.isFixedHeight
+            case .c10(let c10): return c10.isFixedHeight
+            case .c11(let c11): return c11.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            case .c9(let c9): c9.layout(to: &rect, with: view, in: source)
+            case .c10(let c10): c10.layout(to: &rect, with: view, in: source)
+            case .c11(let c11): c11.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            case .c9(let c9): c9.apply(rect, for: view)
+            case .c10(let c10): c10.apply(rect, for: view)
+            case .c11(let c11): c11.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 12 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        case 9: return .c9(c9)
+        case 10: return .c10(c10)
+        case 11: return .c11(c11)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct ThirteenViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout, C9: ViewBasedLayout, C10: ViewBasedLayout, C11: ViewBasedLayout, C12: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View, C9.View == C0.View, C10.View == C0.View, C11.View == C0.View, C12.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1484,6 +2251,25 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        var r9 = source; c9.layout(to: &r9, with: view, in: source); unionRect = unionRect.union(r9)
+        var r10 = source; c10.layout(to: &r10, with: view, in: source); unionRect = unionRect.union(r10)
+        var r11 = source; c11.layout(to: &r11, with: view, in: source); unionRect = unionRect.union(r11)
+        var r12 = source; c12.layout(to: &r12, with: view, in: source); unionRect = unionRect.union(r12)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1518,10 +2304,134 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension ThirteenViewLayout: Layout where C0.View == Void {}
+extension ThirteenViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8), c9(C9), c10(C10), c11(C11), c12(C12)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            case .c9(let c9): return c9.id
+            case .c10(let c10): return c10.id
+            case .c11(let c11): return c11.id
+            case .c12(let c12): return c12.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            case .c9(let c9): return c9.isFixedWidth
+            case .c10(let c10): return c10.isFixedWidth
+            case .c11(let c11): return c11.isFixedWidth
+            case .c12(let c12): return c12.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            case .c9(let c9): return c9.isFixedHeight
+            case .c10(let c10): return c10.isFixedHeight
+            case .c11(let c11): return c11.isFixedHeight
+            case .c12(let c12): return c12.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            case .c9(let c9): c9.layout(to: &rect, with: view, in: source)
+            case .c10(let c10): c10.layout(to: &rect, with: view, in: source)
+            case .c11(let c11): c11.layout(to: &rect, with: view, in: source)
+            case .c12(let c12): c12.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            case .c9(let c9): c9.apply(rect, for: view)
+            case .c10(let c10): c10.apply(rect, for: view)
+            case .c11(let c11): c11.apply(rect, for: view)
+            case .c12(let c12): c12.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 13 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        case 9: return .c9(c9)
+        case 10: return .c10(c10)
+        case 11: return .c11(c11)
+        case 12: return .c12(c12)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct FourteenViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout, C9: ViewBasedLayout, C10: ViewBasedLayout, C11: ViewBasedLayout, C12: ViewBasedLayout, C13: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View, C9.View == C0.View, C10.View == C0.View, C11.View == C0.View, C12.View == C0.View, C13.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1587,6 +2497,26 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        var r9 = source; c9.layout(to: &r9, with: view, in: source); unionRect = unionRect.union(r9)
+        var r10 = source; c10.layout(to: &r10, with: view, in: source); unionRect = unionRect.union(r10)
+        var r11 = source; c11.layout(to: &r11, with: view, in: source); unionRect = unionRect.union(r11)
+        var r12 = source; c12.layout(to: &r12, with: view, in: source); unionRect = unionRect.union(r12)
+        var r13 = source; c13.layout(to: &r13, with: view, in: source); unionRect = unionRect.union(r13)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1623,10 +2553,140 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension FourteenViewLayout: Layout where C0.View == Void {}
+extension FourteenViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8), c9(C9), c10(C10), c11(C11), c12(C12), c13(C13)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            case .c9(let c9): return c9.id
+            case .c10(let c10): return c10.id
+            case .c11(let c11): return c11.id
+            case .c12(let c12): return c12.id
+            case .c13(let c13): return c13.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            case .c9(let c9): return c9.isFixedWidth
+            case .c10(let c10): return c10.isFixedWidth
+            case .c11(let c11): return c11.isFixedWidth
+            case .c12(let c12): return c12.isFixedWidth
+            case .c13(let c13): return c13.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            case .c9(let c9): return c9.isFixedHeight
+            case .c10(let c10): return c10.isFixedHeight
+            case .c11(let c11): return c11.isFixedHeight
+            case .c12(let c12): return c12.isFixedHeight
+            case .c13(let c13): return c13.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            case .c9(let c9): c9.layout(to: &rect, with: view, in: source)
+            case .c10(let c10): c10.layout(to: &rect, with: view, in: source)
+            case .c11(let c11): c11.layout(to: &rect, with: view, in: source)
+            case .c12(let c12): c12.layout(to: &rect, with: view, in: source)
+            case .c13(let c13): c13.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            case .c9(let c9): c9.apply(rect, for: view)
+            case .c10(let c10): c10.apply(rect, for: view)
+            case .c11(let c11): c11.apply(rect, for: view)
+            case .c12(let c12): c12.apply(rect, for: view)
+            case .c13(let c13): c13.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 14 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        case 9: return .c9(c9)
+        case 10: return .c10(c10)
+        case 11: return .c11(c11)
+        case 12: return .c12(c12)
+        case 13: return .c13(c13)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 public struct FifteenViewLayout<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14>: ViewBasedLayout
 where C0: ViewBasedLayout, C1: ViewBasedLayout, C2: ViewBasedLayout, C3: ViewBasedLayout, C4: ViewBasedLayout, C5: ViewBasedLayout, C6: ViewBasedLayout, C7: ViewBasedLayout, C8: ViewBasedLayout, C9: ViewBasedLayout, C10: ViewBasedLayout, C11: ViewBasedLayout, C12: ViewBasedLayout, C13: ViewBasedLayout, C14: ViewBasedLayout,
 C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, C5.View == C0.View, C6.View == C0.View, C7.View == C0.View, C8.View == C0.View, C9.View == C0.View, C10.View == C0.View, C11.View == C0.View, C12.View == C0.View, C13.View == C0.View, C14.View == C0.View
 {
+    public typealias View = C0.View
     @usableFromInline
     let c0: C0
     @usableFromInline
@@ -1696,6 +2756,27 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
     @inlinable
     @inline(__always)
+    public func layout(to rect: inout CGRect, with view: C0.View, in source: CGRect) {
+        var unionRect = CGRect.null
+        var r0 = source; c0.layout(to: &r0, with: view, in: source); unionRect = unionRect.union(r0)
+        var r1 = source; c1.layout(to: &r1, with: view, in: source); unionRect = unionRect.union(r1)
+        var r2 = source; c2.layout(to: &r2, with: view, in: source); unionRect = unionRect.union(r2)
+        var r3 = source; c3.layout(to: &r3, with: view, in: source); unionRect = unionRect.union(r3)
+        var r4 = source; c4.layout(to: &r4, with: view, in: source); unionRect = unionRect.union(r4)
+        var r5 = source; c5.layout(to: &r5, with: view, in: source); unionRect = unionRect.union(r5)
+        var r6 = source; c6.layout(to: &r6, with: view, in: source); unionRect = unionRect.union(r6)
+        var r7 = source; c7.layout(to: &r7, with: view, in: source); unionRect = unionRect.union(r7)
+        var r8 = source; c8.layout(to: &r8, with: view, in: source); unionRect = unionRect.union(r8)
+        var r9 = source; c9.layout(to: &r9, with: view, in: source); unionRect = unionRect.union(r9)
+        var r10 = source; c10.layout(to: &r10, with: view, in: source); unionRect = unionRect.union(r10)
+        var r11 = source; c11.layout(to: &r11, with: view, in: source); unionRect = unionRect.union(r11)
+        var r12 = source; c12.layout(to: &r12, with: view, in: source); unionRect = unionRect.union(r12)
+        var r13 = source; c13.layout(to: &r13, with: view, in: source); unionRect = unionRect.union(r13)
+        var r14 = source; c14.layout(to: &r14, with: view, in: source); unionRect = unionRect.union(r14)
+        rect = unionRect
+    }
+    @inlinable
+    @inline(__always)
     public func layout(to snapshot: inout LayoutSnapshot, with view: C0.View, in source: CGRect) {
         c0.layout(to: &snapshot, with: view, in: source)
         c1.layout(to: &snapshot, with: view, in: source)
@@ -1734,6 +2815,141 @@ C1.View == C0.View, C2.View == C0.View, C3.View == C0.View, C4.View == C0.View, 
     }
 }
 extension FifteenViewLayout: Layout where C0.View == Void {}
+extension FifteenViewLayout: CompoundLayout {
+    public enum Sublayout: ViewBasedLayout {
+        case c0(C0), c1(C1), c2(C2), c3(C3), c4(C4), c5(C5), c6(C6), c7(C7), c8(C8), c9(C9), c10(C10), c11(C11), c12(C12), c13(C13), c14(C14)
+        @inlinable
+        @inline(__always)
+        public var id: Int? {
+            switch self {
+            case .c0(let c0): return c0.id
+            case .c1(let c1): return c1.id
+            case .c2(let c2): return c2.id
+            case .c3(let c3): return c3.id
+            case .c4(let c4): return c4.id
+            case .c5(let c5): return c5.id
+            case .c6(let c6): return c6.id
+            case .c7(let c7): return c7.id
+            case .c8(let c8): return c8.id
+            case .c9(let c9): return c9.id
+            case .c10(let c10): return c10.id
+            case .c11(let c11): return c11.id
+            case .c12(let c12): return c12.id
+            case .c13(let c13): return c13.id
+            case .c14(let c14): return c14.id
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedWidth: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedWidth
+            case .c1(let c1): return c1.isFixedWidth
+            case .c2(let c2): return c2.isFixedWidth
+            case .c3(let c3): return c3.isFixedWidth
+            case .c4(let c4): return c4.isFixedWidth
+            case .c5(let c5): return c5.isFixedWidth
+            case .c6(let c6): return c6.isFixedWidth
+            case .c7(let c7): return c7.isFixedWidth
+            case .c8(let c8): return c8.isFixedWidth
+            case .c9(let c9): return c9.isFixedWidth
+            case .c10(let c10): return c10.isFixedWidth
+            case .c11(let c11): return c11.isFixedWidth
+            case .c12(let c12): return c12.isFixedWidth
+            case .c13(let c13): return c13.isFixedWidth
+            case .c14(let c14): return c14.isFixedWidth
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public var isFixedHeight: Bool {
+            switch self {
+            case .c0(let c0): return c0.isFixedHeight
+            case .c1(let c1): return c1.isFixedHeight
+            case .c2(let c2): return c2.isFixedHeight
+            case .c3(let c3): return c3.isFixedHeight
+            case .c4(let c4): return c4.isFixedHeight
+            case .c5(let c5): return c5.isFixedHeight
+            case .c6(let c6): return c6.isFixedHeight
+            case .c7(let c7): return c7.isFixedHeight
+            case .c8(let c8): return c8.isFixedHeight
+            case .c9(let c9): return c9.isFixedHeight
+            case .c10(let c10): return c10.isFixedHeight
+            case .c11(let c11): return c11.isFixedHeight
+            case .c12(let c12): return c12.isFixedHeight
+            case .c13(let c13): return c13.isFixedHeight
+            case .c14(let c14): return c14.isFixedHeight
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func layout(to rect: inout CGRect, with view: View, in source: CGRect) {
+            switch self {
+            case .c0(let c0): c0.layout(to: &rect, with: view, in: source)
+            case .c1(let c1): c1.layout(to: &rect, with: view, in: source)
+            case .c2(let c2): c2.layout(to: &rect, with: view, in: source)
+            case .c3(let c3): c3.layout(to: &rect, with: view, in: source)
+            case .c4(let c4): c4.layout(to: &rect, with: view, in: source)
+            case .c5(let c5): c5.layout(to: &rect, with: view, in: source)
+            case .c6(let c6): c6.layout(to: &rect, with: view, in: source)
+            case .c7(let c7): c7.layout(to: &rect, with: view, in: source)
+            case .c8(let c8): c8.layout(to: &rect, with: view, in: source)
+            case .c9(let c9): c9.layout(to: &rect, with: view, in: source)
+            case .c10(let c10): c10.layout(to: &rect, with: view, in: source)
+            case .c11(let c11): c11.layout(to: &rect, with: view, in: source)
+            case .c12(let c12): c12.layout(to: &rect, with: view, in: source)
+            case .c13(let c13): c13.layout(to: &rect, with: view, in: source)
+            case .c14(let c14): c14.layout(to: &rect, with: view, in: source)
+            }
+        }
+        @inlinable
+        @inline(__always)
+        public func apply(_ rect: CGRect, for view: C0.View) {
+            switch self {
+            case .c0(let c0): c0.apply(rect, for: view)
+            case .c1(let c1): c1.apply(rect, for: view)
+            case .c2(let c2): c2.apply(rect, for: view)
+            case .c3(let c3): c3.apply(rect, for: view)
+            case .c4(let c4): c4.apply(rect, for: view)
+            case .c5(let c5): c5.apply(rect, for: view)
+            case .c6(let c6): c6.apply(rect, for: view)
+            case .c7(let c7): c7.apply(rect, for: view)
+            case .c8(let c8): c8.apply(rect, for: view)
+            case .c9(let c9): c9.apply(rect, for: view)
+            case .c10(let c10): c10.apply(rect, for: view)
+            case .c11(let c11): c11.apply(rect, for: view)
+            case .c12(let c12): c12.apply(rect, for: view)
+            case .c13(let c13): c13.apply(rect, for: view)
+            case .c14(let c14): c14.apply(rect, for: view)
+            }
+        }
+    }
+    @inlinable
+    @inline(__always)
+    public var endIndex: Int { 15 }
+    @inlinable
+    @inline(__always)
+    public subscript(position: Int) -> Sublayout {
+        switch position {
+        case 0: return .c0(c0)
+        case 1: return .c1(c1)
+        case 2: return .c2(c2)
+        case 3: return .c3(c3)
+        case 4: return .c4(c4)
+        case 5: return .c5(c5)
+        case 6: return .c6(c6)
+        case 7: return .c7(c7)
+        case 8: return .c8(c8)
+        case 9: return .c9(c9)
+        case 10: return .c10(c10)
+        case 11: return .c11(c11)
+        case 12: return .c12(c12)
+        case 13: return .c13(c13)
+        case 14: return .c14(c14)
+        default: fatalError("Index out of range")
+        }
+    }
+}
 
 extension LayoutBuilder {
     @inlinable
