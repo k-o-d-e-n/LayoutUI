@@ -31,7 +31,7 @@ struct SwiftUIView: View {
             .background(.gray)
             .basicLayout {
                 Width().scaled(0.5)
-                MaxX.Align.MaxX()
+                Right()
             }
             VStack {
                 Text("Hello")
@@ -41,7 +41,7 @@ struct SwiftUIView: View {
             }
             .basicLayout(.bottomLeading) {
                 Width().scaled(0.5)
-                Left().offset(40)
+                Left().offset(70)
                 Bottom().offset(-40)
             }
             .border(Color.green, width: 10)
@@ -49,38 +49,44 @@ struct SwiftUIView: View {
             if #available(macOS 13.0, iOS 16, *) {
                 Color.red.opacity(0.5)
                     .layout {
-                        Width().inset(100)
+                        Width().scaled(0.25).between(100 ... 300)
                         Height().scaled(0.5)
-                        CenterX()
+                        CenterX().offset(multiplier: -0.25)
                         CenterY()
                     }
                 Text("Custom layout")
                     .background(Color.yellow)
                     .fittingLayout {
                         CenterX()
-                        CenterY()
+                        Top().offset(30)
                     }
                 (ConstraintBasedLayout()) {
                     Text("Text #1+").constrainedLayout { Left().offset(20) }
                     Text("Text #2/").constrainedLayout {
-                        Constraint(0) { MaxY.Align.MinY().offset(20) }
+                        Constraint(viewID: 0) { MinY.Align.MaxY().offset(20) }
                     }
                     Text("Text #3\\").zIndex(50).constrainedLayout {
-                        Constraint(1) {
-                            MaxY.Align.MinY()
-                            MaxX.Align.MinX().offset(10)
+                        Constraint(viewID: 1) {
+                            MinY.Align.MaxY()
+                            MinX.Align.MaxX().offset(10)
                         }
                     }
                     Color.red.border(Color.yellow, width: 2).constrainedLayout {
-                        Constraint(2) { Equal() }
+                        Constraint(viewID: 2) {
+                            Equal()
+                        }
                     }
                     Color.brown.constrainedLayout {
-                        Constraint(1) { MaxY.Limit.MinY() }
-                        Constraint(2) { MinX.Limit.MaxX() }
+                        Constraint(viewID: 1) { MinY.Limit.MaxY() }
+                        Constraint(viewID: 2) { MaxX.Limit.MinX() }
                     }
                 }
             }
             #endif
         }
     }
+}
+
+#Preview {
+    SwiftUIView()
 }

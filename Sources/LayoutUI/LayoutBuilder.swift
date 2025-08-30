@@ -191,3 +191,23 @@ extension LayoutBuilder {
         _ConditionalViewBasedLayout(condition: .second(second))
     }
 }
+
+extension LayoutBuilder {
+    @available(macOS 14.0.0, *)
+    public static func buildBlock<each Layout: RectBasedLayout>(_ components: repeat each Layout) -> TupleRectLayout<repeat each Layout> {
+        TupleRectLayout(value: repeat each components)
+    }
+}
+
+@available(macOS 14.0.0, *)
+public struct TupleRectLayout<each Layout: RectBasedLayout>: RectBasedLayout {
+    let value: (repeat each Layout)
+    
+    init(value: repeat each Layout) {
+        self.value = (repeat each value)
+    }
+    
+    public func layout(_ rect: inout CGRect, with source: CGRect) {
+        repeat (each value).layout(&rect, with: source)
+    }
+}

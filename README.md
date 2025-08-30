@@ -82,20 +82,20 @@ struct ContentView: View {
             (ConstraintBasedLayout()) {
                 Text("Text #1+").constrainedLayout { Left().offset(20) }
                 Text("Text #2/").constrainedLayout {
-                    Constraint(0) { MaxY.Align.MinY().offset(20) }
+                    Constraint(0) { MinY.Align.MaxY().offset(20) }
                 }
                 Text("Text #3\\").zIndex(50).constrainedLayout {
                     Constraint(1) {
-                        MaxY.Align.MinY()
-                        MaxX.Align.MinX().offset(10)
+                        MinY.Align.MaxY()
+                        MinX.Align.MaxX().offset(10)
                     }
                 }
                 Color.red.border(Color.yellow, width: 2).constrainedLayout {
                     Constraint(2) { Equal() }
                 }
                 Color.brown.constrainedLayout {
-                    Constraint(1) { MaxY.Limit.MinY() }
-                    Constraint(2) { MinX.Limit.MaxX() }
+                    Constraint(1) { MinY.Limit.MaxY() }
+                    Constraint(2) { MaxX.Limit.MinX() }
                 }
             }
         }

@@ -8,12 +8,12 @@ import CoreGraphics
 import Foundation
 #endif
 
-public typealias Left = MinX.After.Align
-public typealias Right = MaxX.Before.Align
-public typealias Top = MinY.After.Align
-public typealias Bottom = MaxY.Before.Align
-public typealias CenterX = MidX.Center.Align
-public typealias CenterY = MidY.Center.Align
+public typealias Left = MinX.Align.MinX
+public typealias Right = MaxX.Align.MaxX
+public typealias Top = MinY.Align.MinY
+public typealias Bottom = MaxY.Align.MaxY
+public typealias CenterX = MidX.Align.MidX
+public typealias CenterY = MidY.Align.MidY
 
 public protocol WidthLayout: RectBasedLayout {}
 extension Print: WidthLayout where Base: WidthLayout {}
@@ -38,7 +38,7 @@ extension Width {
         public init(_ value: CGFloat) { self.value = value }
         @inlinable
         @inline(__always)
-        public func layout(_ rect: inout CGRect, with source: CGRect) {
+        public func layout(_ rect: inout CGRect, with _: CGRect) {
             rect.size.width = value
         }
     }
@@ -117,7 +117,7 @@ where Base: RectBasedLayout {
     @inline(__always)
     public func layout(_ rect: inout CGRect, with source: CGRect) {
         base.layout(&rect, with: source)
-        rect.size.width = max(value.lowerBound, min(value.upperBound, source.width))
+        rect.size.width = max(value.lowerBound, min(value.upperBound, rect.width))
     }
 }
 extension WidthLayout {
@@ -160,7 +160,7 @@ extension Height {
         public init(_ value: CGFloat) { self.value = value }
         @inlinable
         @inline(__always)
-        public func layout(_ rect: inout CGRect, with source: CGRect) {
+        public func layout(_ rect: inout CGRect, with _: CGRect) {
             rect.size.height = value
         }
     }
@@ -239,7 +239,7 @@ where Base: RectBasedLayout {
     @inline(__always)
     public func layout(_ rect: inout CGRect, with source: CGRect) {
         base.layout(&rect, with: source)
-        rect.size.height = max(value.lowerBound, min(value.upperBound, source.height))
+        rect.size.height = max(value.lowerBound, min(value.upperBound, rect.height))
     }
 }
 extension HeightLayout {
@@ -264,20 +264,10 @@ public protocol MinXLayout: RectBasedLayout {}
 extension Print: MinXLayout where Base: MinXLayout {}
 public enum MinX {}
 extension MinX {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension MinX.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias MaxX = LayoutUI.MinX.Before.Align
-    public typealias MinX = LayoutUI.MinX.After.Align
-    public typealias MidX = LayoutUI.MinX.Center.Align
-}
-extension MinX.Before {
-    public struct Align: MinXLayout {
+extension MaxX.Align {
+    public struct MinX: MinXLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -288,8 +278,8 @@ extension MinX.Before {
         }
     }
 }
-extension MinX.After {
-    public struct Align: MinXLayout {
+extension MinX.Align {
+    public struct MinX: MinXLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -300,8 +290,8 @@ extension MinX.After {
         }
     }
 }
-extension MinX.Center {
-    public struct Align: MinXLayout {
+extension MidX.Align {
+    public struct MinX: MinXLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -360,20 +350,10 @@ extension MinXLayout {
 }
 public enum MaxX {}
 extension MaxX {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension MaxX.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias MaxX = LayoutUI.MaxX.Before.Align
-    public typealias MinX = LayoutUI.MaxX.After.Align
-    public typealias MidX = LayoutUI.MaxX.Center.Align
-}
-extension MaxX.Before {
-    public struct Align: RectBasedLayout {
+extension MaxX.Align {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -384,8 +364,8 @@ extension MaxX.Before {
         }
     }
 }
-extension MaxX.After {
-    public struct Align: RectBasedLayout {
+extension MinX.Align {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -396,8 +376,8 @@ extension MaxX.After {
         }
     }
 }
-extension MaxX.Center {
-    public struct Align: RectBasedLayout {
+extension MidX.Align {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -408,27 +388,17 @@ extension MaxX.Center {
         }
     }
 }
-extension MaxX.Before.Align: MinXLayout {}
-extension MaxX.After.Align: MinXLayout {}
-extension MaxX.Center.Align: MinXLayout {}
+extension MaxX.Align.MaxX: MinXLayout {}
+extension MinX.Align.MaxX: MinXLayout {}
+extension MidX.Align.MaxX: MinXLayout {}
 public protocol MinYLayout: RectBasedLayout {}
 extension Print: MinYLayout where Base: MinYLayout {}
 public enum MinY {}
 extension MinY {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension MinY.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias MaxY = LayoutUI.MinY.Before.Align
-    public typealias MinY = LayoutUI.MinY.After.Align
-    public typealias MidY = LayoutUI.MinY.Center.Align
-}
-extension MinY.Before {
-    public struct Align: MinYLayout {
+extension MaxY.Align {
+    public struct MinY: MinYLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -439,8 +409,8 @@ extension MinY.Before {
         }
     }
 }
-extension MinY.After {
-    public struct Align: MinYLayout {
+extension MinY.Align {
+    public struct MinY: MinYLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -451,8 +421,8 @@ extension MinY.After {
         }
     }
 }
-extension MinY.Center {
-    public struct Align: MinYLayout {
+extension MidY.Align {
+    public struct MinY: MinYLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -511,20 +481,10 @@ extension MinYLayout {
 }
 public enum MaxY {}
 extension MaxY {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension MaxY.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias MaxY = LayoutUI.MaxY.Before.Align
-    public typealias MinY = LayoutUI.MaxY.After.Align
-    public typealias MidY = LayoutUI.MaxY.Center.Align
-}
-extension MaxY.Before {
-    public struct Align: RectBasedLayout {
+extension MaxY.Align {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -535,8 +495,8 @@ extension MaxY.Before {
         }
     }
 }
-extension MaxY.After {
-    public struct Align: RectBasedLayout {
+extension MinY.Align {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -547,8 +507,8 @@ extension MaxY.After {
         }
     }
 }
-extension MaxY.Center {
-    public struct Align: RectBasedLayout {
+extension MidY.Align {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -559,25 +519,15 @@ extension MaxY.Center {
         }
     }
 }
-extension MaxY.Before.Align: MinYLayout {}
-extension MaxY.After.Align: MinYLayout {}
-extension MaxY.Center.Align: MinYLayout {}
+extension MaxY.Align.MaxY: MinYLayout {}
+extension MinY.Align.MaxY: MinYLayout {}
+extension MidY.Align.MaxY: MinYLayout {}
 public enum MidX {}
 extension MidX {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension MidX.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias MaxX = LayoutUI.MidX.Before.Align
-    public typealias MinX = LayoutUI.MidX.After.Align
-    public typealias MidX = LayoutUI.MidX.Center.Align
-}
-extension MidX.Before {
-    public struct Align: RectBasedLayout {
+extension MaxX.Align {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -588,8 +538,8 @@ extension MidX.Before {
         }
     }
 }
-extension MidX.After {
-    public struct Align: RectBasedLayout {
+extension MinX.Align {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -600,8 +550,8 @@ extension MidX.After {
         }
     }
 }
-extension MidX.Center {
-    public struct Align: RectBasedLayout {
+extension MidX.Align {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -612,25 +562,15 @@ extension MidX.Center {
         }
     }
 }
-extension MidX.Before.Align: MinXLayout {}
-extension MidX.After.Align: MinXLayout {}
-extension MidX.Center.Align: MinXLayout {}
+extension MaxX.Align.MidX: MinXLayout {}
+extension MinX.Align.MidX: MinXLayout {}
+extension MidX.Align.MidX: MinXLayout {}
 public enum MidY {}
 extension MidY {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension MidY.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias MaxY = LayoutUI.MidY.Before.Align
-    public typealias MinY = LayoutUI.MidY.After.Align
-    public typealias MidY = LayoutUI.MidY.Center.Align
-}
-extension MidY.Before {
-    public struct Align: RectBasedLayout {
+extension MaxY.Align {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -641,8 +581,8 @@ extension MidY.Before {
         }
     }
 }
-extension MidY.After {
-    public struct Align: RectBasedLayout {
+extension MinY.Align {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -653,8 +593,8 @@ extension MidY.After {
         }
     }
 }
-extension MidY.Center {
-    public struct Align: RectBasedLayout {
+extension MidY.Align {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -665,6 +605,6 @@ extension MidY.Center {
         }
     }
 }
-extension MidY.Before.Align: MinYLayout {}
-extension MidY.After.Align: MinYLayout {}
-extension MidY.Center.Align: MinYLayout {}
+extension MaxY.Align.MidY: MinYLayout {}
+extension MinY.Align.MidY: MinYLayout {}
+extension MidY.Align.MidY: MinYLayout {}

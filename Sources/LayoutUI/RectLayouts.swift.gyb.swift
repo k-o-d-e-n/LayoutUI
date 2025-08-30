@@ -12,16 +12,16 @@ import CoreGraphics
 import Foundation
 #endif
 
-public typealias Left = MinX.After.Align
-public typealias Right = MaxX.Before.Align
-public typealias Top = MinY.After.Align
-public typealias Bottom = MaxY.Before.Align
-public typealias CenterX = MidX.Center.Align
-public typealias CenterY = MidY.Center.Align
+public typealias Left = MinX.Align.MinX
+public typealias Right = MaxX.Align.MaxX
+public typealias Top = MinY.Align.MinY
+public typealias Bottom = MaxY.Align.MaxY
+public typealias CenterX = MidX.Align.MidX
+public typealias CenterY = MidY.Align.MidY
 
 % for element in size_elements:
 %{
-contr_element = 'Width' if element == 'Height' else 'Height'
+opposite_element = 'Width' if element == 'Height' else 'Height'
 }%
 public protocol ${element}Layout: RectBasedLayout {}
 extension Print: ${element}Layout where Base: ${element}Layout {}
@@ -46,7 +46,7 @@ extension ${element} {
         public init(_ value: CGFloat) { self.value = value }
         @inlinable
         @inline(__always)
-        public func layout(_ rect: inout CGRect, with source: CGRect) {
+        public func layout(_ rect: inout CGRect, with _: CGRect) {
             rect.size.${element.lower()} = value
         }
     }
@@ -59,7 +59,7 @@ extension ${element} {
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            rect.size.${element.lower()} = rect.${contr_element.lower()} * value
+            rect.size.${element.lower()} = rect.${opposite_element.lower()} * value
         }
     }
 }
@@ -125,7 +125,7 @@ where Base: RectBasedLayout {
     @inline(__always)
     public func layout(_ rect: inout CGRect, with source: CGRect) {
         base.layout(&rect, with: source)
-        rect.size.${element.lower()} = max(value.lowerBound, min(value.upperBound, source.${element.lower()}))
+        rect.size.${element.lower()} = max(value.lowerBound, min(value.upperBound, rect.${element.lower()}))
     }
 }
 extension ${element}Layout {
@@ -162,67 +162,41 @@ public protocol ${element}Layout: RectBasedLayout {}
 extension Print: ${element}Layout where Base: ${element}Layout {}
 % end
 public enum ${element} {}
-%{
-_contrside = contrside[0].upper() + contrside[1:]
-anchor1_typealias = _contrside if ismin else element if not ismid else 'Max' + axis
-anchor1_typealias_value = 'Before'
-anchor2_typealias = element if ismin else _contrside if not ismid else 'Min' + axis
-anchor2_typealias_value = 'After'
-}%
 extension ${element} {
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum Before {}
-    @available(*, deprecated, message: "Use {constraint_anchor}.{action}.{target_anchor} pattern")
-    public enum After {}
-    public enum Center {}
     public enum Align {}
 }
-extension ${element}.Align { // TODO: Change to pattern {target_anchor}.{action}.{constraint_anchor}
-    public typealias ${anchor1_typealias} = LayoutUI.${element}.${anchor1_typealias_value}.Align
-    public typealias ${anchor2_typealias} = LayoutUI.${element}.${anchor2_typealias_value}.Align
-    public typealias Mid${axis} = LayoutUI.${element}.Center.Align
-}
-extension ${element}.Before {
-    public struct Align: ${element + 'Layout' if ismin else 'RectBasedLayout'} {
+extension Max${axis}.Align {
+    public struct ${element}: ${element + 'Layout' if ismin else 'RectBasedLayout'} {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-                #axis.set(origin: anchor.get(for: rect, in: axis) - axis.get(sizeAt: sourceRect), for: &sourceRect)
-            }%
             rect.origin.${axis.lower()} = source.${side} - rect.size.${dimension}
         }
     }
 }
-extension ${element}.After {
-    public struct Align: ${element + 'Layout' if ismin else 'RectBasedLayout'} {
+extension Min${axis}.Align {
+    public struct ${element}: ${element + 'Layout' if ismin else 'RectBasedLayout'} {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-                #axis.set(origin: anchor.get(for: rect, in: axis), for: &sourceRect)
-            }%
             rect.origin.${axis.lower()} = source.${side}
         }
     }
 }
-extension ${element}.Center {
-    public struct Align: ${element + 'Layout' if ismin else 'RectBasedLayout'} {
+extension Mid${axis}.Align {
+    public struct ${element}: ${element + 'Layout' if ismin else 'RectBasedLayout'} {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-                #axis.set(origin: anchor.get(for: rect, in: axis) - axis.get(sizeAt: sourceRect) * 0.5, for: &sourceRect)
-            }%
             rect.origin.${axis.lower()} = source.${side} - rect.size.${dimension} * 0.5
         }
     }
@@ -275,8 +249,8 @@ extension ${element}Layout {
     }
 }
 % else:
-extension ${element}.Before.Align: Min${element[-1]}Layout {}
-extension ${element}.After.Align: Min${element[-1]}Layout {}
-extension ${element}.Center.Align: Min${element[-1]}Layout {}
+extension Max${axis}.Align.${element}: Min${element[-1]}Layout {}
+extension Min${axis}.Align.${element}: Min${element[-1]}Layout {}
+extension Mid${axis}.Align.${element}: Min${element[-1]}Layout {}
 % end
 % end

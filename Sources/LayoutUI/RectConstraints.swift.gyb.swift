@@ -11,8 +11,6 @@ import CoreGraphics
 import Foundation
 #endif
 
-// TODO: Move all implementations to Before/After namespaces
-
 % for element in side_elements:
 %{
 ismin = element.startswith('Min')
@@ -42,76 +40,56 @@ extension ${element}.Pull {
     public typealias ${anchor1_typealias} = LayoutUI.${element}.${anchor1_typealias_value}.Pull
     public typealias ${anchor2_typealias} = LayoutUI.${element}.${anchor2_typealias_value}.Pull
 }
-extension ${element}.Before {
-    public struct Limit: RectBasedLayout {
+extension Max${axis}.Limit {
+    public struct ${element}: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-            #let anchorPosition = anchor.get(for: rect, in: axis)
-            #axis.set(size: max(0, min(axis.get(sizeAt: sourceRect), anchorPosition - axis.get(minOf: sourceRect))), for: &sourceRect)
-            #axis.set(origin: min(anchorPosition, axis.get(minOf: sourceRect)), for: &sourceRect)
-            }%
             let anchor = source.${side}
             rect.size.${dimension} = max(0, min(rect.${dimension}, anchor - rect.min${axis}))
             rect.origin.${axis.lower()} = min(anchor, rect.min${axis})
         }
     }
 }
-extension ${element}.After {
-    public struct Limit: RectBasedLayout {
+extension Min${axis}.Limit {
+    public struct ${element}: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-            #let anchorPosition = anchor.get(for: rect, in: axis)
-            #axis.set(size: max(0, min(axis.get(sizeAt: sourceRect), axis.get(maxOf: sourceRect) - anchorPosition)), for: &sourceRect)
-            #axis.set(origin: max(anchorPosition, axis.get(minOf: sourceRect)), for: &sourceRect)
-            }%
             let anchor = source.${side}
             rect.size.${dimension} = max(0, min(rect.${dimension}, rect.max${axis} - anchor))
             rect.origin.${axis.lower()} = max(anchor, rect.min${axis})
         }
     }
 }
-extension ${element}.Before {
-    public struct Pull: RectBasedLayout {
+extension Max${axis}.Pull {
+    public struct ${element}: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-            #let anchorPosition = anchor.get(for: rect, in: axis)
-            #axis.set(size: max(0, anchorPosition - axis.get(minOf: sourceRect)), for: &sourceRect)
-            #axis.set(origin: anchorPosition - axis.get(sizeAt: sourceRect), for: &sourceRect)
-            }%
             let anchor = source.${side}
             rect.size.${dimension} = max(0, anchor - rect.min${axis})
             rect.origin.${axis.lower()} = anchor - rect.size.${dimension}
         }
     }
 }
-extension ${element}.After {
-    public struct Pull: RectBasedLayout {
+extension Min${axis}.Pull {
+    public struct ${element}: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
         @inlinable
         @inline(__always)
         public func layout(_ rect: inout CGRect, with source: CGRect) {
-            %{
-            #let anchorPosition = anchor.get(for: rect, in: axis)
-            #axis.set(size: max(0, axis.get(maxOf: sourceRect) - anchorPosition), for: &sourceRect)
-            #axis.set(origin: anchorPosition, for: &sourceRect)
-            }%
             let anchor = source.${side}
             rect.size.${dimension} = max(0, rect.max${axis} - anchor)
             rect.origin.${axis.lower()} = anchor

@@ -120,14 +120,14 @@ public struct ConstraintBasedLayout: SwiftUI.Layout {
 
 public struct Constraint {
     @usableFromInline
-    let viewID: Int
+    let viewID: Int // TODO: use swiftui id
     @usableFromInline
     let layout: RectBasedLayout
 }
 extension Constraint {
     @inlinable
     @inline(__always)
-    public init<C>(_ viewID: Int, @LayoutBuilder layout: () -> C) where C: RectBasedLayout {
+    public init<C>(viewID: Int, @LayoutBuilder layout: () -> C) where C: RectBasedLayout {
         self.viewID = viewID
         self.layout = layout()
     }

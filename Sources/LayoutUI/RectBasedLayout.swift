@@ -9,6 +9,7 @@ import CoreGraphics
 
 public protocol RectBasedLayout {
     // TODO: Rename to `layout(_ rect: inout CGRect, with other: CGRect)` to avoid semantic conflict with constraint types.
+    // TODO: To avoid order-dependent behavior it may with rect use anchor point
     func layout(_ rect: inout CGRect, with source: CGRect)
 }
 

@@ -286,13 +286,13 @@ extension TestLayoutViewController {
                 Bottom().offset(-4)
                 CenterX()
             }.constraints(bounds, viewID: .max) {
-                MidY.Limit.MaxY()
+                MaxY.Limit.MidY()
             }
             FittingRect(title, cache: sizesCache, id: 1) {
                 Top().offset(4)
                 CenterX()
             }.constraints(bounds, viewID: .max) {
-                MidY.Limit.MinY()
+                MinY.Limit.MidY()
             }
         }
 
@@ -343,8 +343,8 @@ extension TestLayoutViewController {
             Top().offset(15)
             Right().offset(-6)
         }.constraints(imageView, viewID: 0) {
-            MaxY.Align.MinY()
-            MidX.Limit.MaxX()
+            MinY.Align.MaxY()
+            MaxX.Limit.MidX()
         }
         FittingRect(message, id: 2) {
             Width.Current().inset(-10)
@@ -352,8 +352,8 @@ extension TestLayoutViewController {
             Top().offset(15)
             Left().offset(6)
         }.constraints(imageView, viewID: 0) {
-            MaxY.Align.MinY()
-            MidX.Limit.MinX()
+            MinY.Align.MaxY()
+            MinX.Limit.MidX()
         }
         Group {
             Rect(stat2, id: 3) {
@@ -362,7 +362,7 @@ extension TestLayoutViewController {
                 Top().offset(20)
                 CenterX()
             }.constraints(message, viewID: 2) {
-                MaxY.Align.MinY()
+                MinY.Align.MaxY()
             }
             Rect(stat1, id: 4) {
                 Width.Constant(70)
@@ -371,7 +371,7 @@ extension TestLayoutViewController {
                 CenterX()
             }.constraints(stat2, viewID: 3) {
                 Top()
-                MidX.Limit.MaxX()
+                MaxX.Limit.MidX()
             }
             Rect(stat3, id: 5) {
                 Width.Constant(70)
@@ -380,7 +380,7 @@ extension TestLayoutViewController {
                 CenterX()
             }.constraints(stat2, viewID: 3) {
                 Top()
-                MidX.Limit.MinX()
+                MinX.Limit.MidX()
             }
         }.constraints(view.bounds, viewID: .max) {
             Width().between(300...700)
@@ -390,13 +390,13 @@ extension TestLayoutViewController {
             Top().offset(30)
             CenterX()
         }.constraints(stat2, viewID: 3) {
-            MaxY.Align.MinY()
+            MinY.Align.MaxY()
         }
         FittingRect(location, id: 7) {
             Top().offset(10)
             CenterX()
         }.constraints(name, viewID: 6) {
-            MaxY.Align.MinY()
+            MinY.Align.MaxY()
         }
         Rect(separator, id: 8) {
             Width().inset(50)
@@ -404,19 +404,19 @@ extension TestLayoutViewController {
             Top().offset(30)
             CenterX()
         }.constraints(location, viewID: 7) {
-            MaxY.Align.MinY()
+            MinY.Align.MaxY()
         }
         FittingRect(desc, id: 9) {
             Top().offset(30)
             CenterX()
         }.constraints(separator, viewID: 8) {
-            MaxY.Align.MinY()
+            MinY.Align.MaxY()
         }
         FittingRect(showMore, id: 10) {
             Top().offset(10)
             CenterX()
         }.constraints(desc, viewID: 9) {
-            MaxY.Align.MinY()
+            MinY.Align.MaxY()
         }
         if true {
             explicitStackScheme
@@ -435,7 +435,7 @@ extension TestLayoutViewController {
             Top()
             CenterX()
         }.constraints(imageView, viewID: 0) {
-            MidY.Limit.MinY()
+            MinY.Limit.MidY()
         }.constraints(bottomConstraint, viewID: 11) {
             MaxY.Pull.MaxY()
         }.constraints(view.safeAreaRect, viewID: .max)
@@ -459,7 +459,7 @@ extension TestLayoutViewController {
                 }
             }
         }.constraints(imageView, viewID: 0) {
-            MinY.Limit.MaxY()
+            MaxY.Limit.MinY()
         }
     }
     var explicitStackScheme: some LayoutUI.Layout {
@@ -486,7 +486,7 @@ extension TestLayoutViewController {
                 Top()
             }
         }.constraints(imageView, viewID: 0) {
-            MinY.Limit.MaxY()
+            MaxY.Limit.MinY()
         }.constraints {
             Width().inset(20)
             CenterX()
@@ -498,7 +498,7 @@ extension TestLayoutViewController {
         ) { res, el in
             FittingRect(el.animator(), id: res) {}
         }.constraints(imageView, viewID: 0) {
-            MinY.Limit.MaxY()
+            MaxY.Limit.MinY()
         }
     }
     enum JustifyContent {

@@ -8,22 +8,12 @@ import CoreGraphics
 import Foundation
 #endif
 
-// TODO: Move all implementations to Before/After namespaces
-
 extension MinX {
     public enum Limit {}
     public enum Pull {}
 }
-extension MinX.Limit {
-    public typealias MaxX = LayoutUI.MinX.Before.Limit
-    public typealias MinX = LayoutUI.MinX.After.Limit
-}
-extension MinX.Pull {
-    public typealias MaxX = LayoutUI.MinX.Before.Pull
-    public typealias MinX = LayoutUI.MinX.After.Pull
-}
-extension MinX.Before {
-    public struct Limit: RectBasedLayout {
+extension MaxX.Limit {
+    public struct MinX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -36,8 +26,8 @@ extension MinX.Before {
         }
     }
 }
-extension MinX.After {
-    public struct Limit: RectBasedLayout {
+extension MinX.Limit {
+    public struct MinX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -50,8 +40,8 @@ extension MinX.After {
         }
     }
 }
-extension MinX.Before {
-    public struct Pull: RectBasedLayout {
+extension MaxX.Pull {
+    public struct MinX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -64,8 +54,8 @@ extension MinX.Before {
         }
     }
 }
-extension MinX.After {
-    public struct Pull: RectBasedLayout {
+extension MinX.Pull {
+    public struct MinX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -83,15 +73,7 @@ extension MaxX {
     public enum Pull {}
 }
 extension MaxX.Limit {
-    public typealias MaxX = LayoutUI.MaxX.Before.Limit
-    public typealias MinX = LayoutUI.MaxX.After.Limit
-}
-extension MaxX.Pull {
-    public typealias MaxX = LayoutUI.MaxX.Before.Pull
-    public typealias MinX = LayoutUI.MaxX.After.Pull
-}
-extension MaxX.Before {
-    public struct Limit: RectBasedLayout {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -104,8 +86,8 @@ extension MaxX.Before {
         }
     }
 }
-extension MaxX.After {
-    public struct Limit: RectBasedLayout {
+extension MinX.Limit {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -118,8 +100,8 @@ extension MaxX.After {
         }
     }
 }
-extension MaxX.Before {
-    public struct Pull: RectBasedLayout {
+extension MaxX.Pull {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -132,8 +114,8 @@ extension MaxX.Before {
         }
     }
 }
-extension MaxX.After {
-    public struct Pull: RectBasedLayout {
+extension MinX.Pull {
+    public struct MaxX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -150,16 +132,8 @@ extension MinY {
     public enum Limit {}
     public enum Pull {}
 }
-extension MinY.Limit {
-    public typealias MaxY = LayoutUI.MinY.Before.Limit
-    public typealias MinY = LayoutUI.MinY.After.Limit
-}
-extension MinY.Pull {
-    public typealias MaxY = LayoutUI.MinY.Before.Pull
-    public typealias MinY = LayoutUI.MinY.After.Pull
-}
-extension MinY.Before {
-    public struct Limit: RectBasedLayout {
+extension MaxY.Limit {
+    public struct MinY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -172,8 +146,8 @@ extension MinY.Before {
         }
     }
 }
-extension MinY.After {
-    public struct Limit: RectBasedLayout {
+extension MinY.Limit {
+    public struct MinY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -186,8 +160,8 @@ extension MinY.After {
         }
     }
 }
-extension MinY.Before {
-    public struct Pull: RectBasedLayout {
+extension MaxY.Pull {
+    public struct MinY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -200,8 +174,8 @@ extension MinY.Before {
         }
     }
 }
-extension MinY.After {
-    public struct Pull: RectBasedLayout {
+extension MinY.Pull {
+    public struct MinY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -219,15 +193,7 @@ extension MaxY {
     public enum Pull {}
 }
 extension MaxY.Limit {
-    public typealias MaxY = LayoutUI.MaxY.Before.Limit
-    public typealias MinY = LayoutUI.MaxY.After.Limit
-}
-extension MaxY.Pull {
-    public typealias MaxY = LayoutUI.MaxY.Before.Pull
-    public typealias MinY = LayoutUI.MaxY.After.Pull
-}
-extension MaxY.Before {
-    public struct Limit: RectBasedLayout {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -240,8 +206,8 @@ extension MaxY.Before {
         }
     }
 }
-extension MaxY.After {
-    public struct Limit: RectBasedLayout {
+extension MinY.Limit {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -254,8 +220,8 @@ extension MaxY.After {
         }
     }
 }
-extension MaxY.Before {
-    public struct Pull: RectBasedLayout {
+extension MaxY.Pull {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -268,8 +234,8 @@ extension MaxY.Before {
         }
     }
 }
-extension MaxY.After {
-    public struct Pull: RectBasedLayout {
+extension MinY.Pull {
+    public struct MaxY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -286,16 +252,8 @@ extension MidX {
     public enum Limit {}
     public enum Pull {}
 }
-extension MidX.Limit {
-    public typealias MinX = LayoutUI.MidX.After.Limit
-    public typealias MaxX = LayoutUI.MidX.Before.Limit
-}
-extension MidX.Pull {
-    public typealias MinX = LayoutUI.MidX.After.Pull
-    public typealias MaxX = LayoutUI.MidX.Before.Pull
-}
-extension MidX.Before {
-    public struct Limit: RectBasedLayout {
+extension MaxX.Limit {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -308,8 +266,8 @@ extension MidX.Before {
         }
     }
 }
-extension MidX.After {
-    public struct Limit: RectBasedLayout {
+extension MinX.Limit {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -322,8 +280,8 @@ extension MidX.After {
         }
     }
 }
-extension MidX.Before {
-    public struct Pull: RectBasedLayout {
+extension MaxX.Pull {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -336,8 +294,8 @@ extension MidX.Before {
         }
     }
 }
-extension MidX.After {
-    public struct Pull: RectBasedLayout {
+extension MinX.Pull {
+    public struct MidX: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -354,16 +312,8 @@ extension MidY {
     public enum Limit {}
     public enum Pull {}
 }
-extension MidY.Limit {
-    public typealias MinY = LayoutUI.MidY.After.Limit
-    public typealias MaxY = LayoutUI.MidY.Before.Limit
-}
-extension MidY.Pull {
-    public typealias MinY = LayoutUI.MidY.After.Pull
-    public typealias MaxY = LayoutUI.MidY.Before.Pull
-}
-extension MidY.Before {
-    public struct Limit: RectBasedLayout {
+extension MaxY.Limit {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -376,8 +326,8 @@ extension MidY.Before {
         }
     }
 }
-extension MidY.After {
-    public struct Limit: RectBasedLayout {
+extension MinY.Limit {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -390,8 +340,8 @@ extension MidY.After {
         }
     }
 }
-extension MidY.Before {
-    public struct Pull: RectBasedLayout {
+extension MaxY.Pull {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}
@@ -404,8 +354,8 @@ extension MidY.Before {
         }
     }
 }
-extension MidY.After {
-    public struct Pull: RectBasedLayout {
+extension MinY.Pull {
+    public struct MidY: RectBasedLayout {
         @inlinable
         @inline(__always)
         public init() {}

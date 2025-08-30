@@ -141,107 +141,107 @@ extension LayoutCellContent {
     }
     static let scheme: AnyViewLayout<LayoutCellContent> = AnyViewLayout {
         Group {
-        FittingRect(\Self.optionsLabel/*, cache: sizesCache*/, id: 0) {
-            Top()
-            Right()
-        }
-        FittingRect(\Self.actionLabel/*, cache: sizesCache*/, id: 1) {
-            Top()
-            Left()
-        }
+            FittingRect(\LayoutCellContent.optionsLabel/*, cache: sizesCache*/, id: 0) {
+                Top()
+                Right()
+            }
+            FittingRect(\LayoutCellContent.actionLabel/*, cache: sizesCache*/, id: 1) {
+                Top()
+                Left()
+            }
         }
         Group {
-        Rect(\Self.posterImageView.frame/*, cache: sizesCache*/, id: 2) {
-            Height.Constant(50)
-            Width.Constant(50)
-            Top().offset(10)
-            Left()
-        }.constraints(\Self.actionLabel.frame, viewID: 1) {
-            MaxY.Align.MinY()
+            Rect(\LayoutCellContent.posterImageView.frame/*, cache: sizesCache*/, id: 2) {
+                Height.Constant(50)
+                Width.Constant(50)
+                Top().offset(10)
+                Left()
+            }.constraints(\LayoutCellContent.actionLabel.frame, viewID: 1) {
+                MinY.Align.MaxY()
+            }
+            FittingRect(\LayoutCellContent.posterNameLabel/*, cache: sizesCache*/, id: 3) {
+                Top().offset(-10)
+                Left().offset(2)
+            }.constraints(\LayoutCellContent.posterImageView.frame, viewID: 2) {
+                Top()
+                MinX.Align.MaxX()
+            }
+            FittingRect(\LayoutCellContent.posterHeadlineLabel/*, cache: sizesCache*/, id: 4) {
+                Top().offset(1)
+                Left()
+            }.constraints(\LayoutCellContent.posterNameLabel.frame, viewID: 3) {
+                MinX.Align.MinX()
+                MinY.Align.MaxY()
+            }.constraints {
+                Width().inset(50)
+            }
+            FittingRect(\LayoutCellContent.posterTimeLabel/*, cache: sizesCache*/, id: 5) {
+                Top().offset(1)
+                Left()
+            }.constraints(\LayoutCellContent.posterHeadlineLabel.frame, viewID: 4) {
+                MinX.Align.MinX()
+                MinY.Align.MaxY()
+            }
         }
-        FittingRect(\Self.posterNameLabel/*, cache: sizesCache*/, id: 3) {
-            Top().offset(-10)
-            Left().offset(2)
-        }.constraints(\Self.posterImageView.frame, viewID: 2) {
-            Top()
-            MaxX.Align.MinX()
-        }
-        FittingRect(\Self.posterHeadlineLabel/*, cache: sizesCache*/, id: 4) {
-            Top().offset(1)
-            Left()
-        }.constraints(\Self.posterNameLabel.frame, viewID: 3) {
-            MinX.Align.MinX()
-            MaxY.Align.MinY()
-        }.constraints {
-            Width().inset(50)
-        }
-        FittingRect(\Self.posterTimeLabel/*, cache: sizesCache*/, id: 5) {
-            Top().offset(1)
-            Left()
-        }.constraints(\Self.posterHeadlineLabel.frame, viewID: 4) {
-            MinX.Align.MinX()
-            MaxY.Align.MinY()
-        }
-        }
-        FittingRect(\Self.posterCommentLabel/*, cache: sizesCache*/, id: 6) {
+        FittingRect(\LayoutCellContent.posterCommentLabel/*, cache: sizesCache*/, id: 6) {
             Width()
             Top().offset(1)
             Left()
-        }.constraints(\Self.posterImageView.frame, viewID: 2) {
-            MaxY.Limit.MinY()
-        }.constraints(\Self.posterTimeLabel.frame, viewID: 5) {
-            MaxY.Limit.MinY()
+        }.constraints(\LayoutCellContent.posterImageView.frame, viewID: 2) {
+            MinY.Limit.MaxY()
+        }.constraints(\LayoutCellContent.posterTimeLabel.frame, viewID: 5) {
+            MinY.Limit.MaxY()
         }
         Group {
-        FittingRect(\Self.contentTitleLabel/*, cache: sizesCache*/, id: 8) {
-            Top().offset(4)
-            Left()
-        }.constraints(\Self.posterCommentLabel.frame, viewID: 6) {
-            MaxY.Align.MinY()
-        }
-        FittingRect(\Self.contentDomainLabel/*, cache: sizesCache*/, id: 9) {
-            Top()
-            Left()
-        }.constraints(\Self.contentTitleLabel.frame, viewID: 8) {
-            MaxY.Align.MinY()
-        }
-        }
-        Group {
-        FittingRect(\Self.likeLabel/*, cache: sizesCache*/, id: 10) {
-            Top().offset(4)
-            Left()
-        }.constraints(\Self.contentDomainLabel.frame, viewID: 9) {
-            MaxY.Align.MinY()
-        }
-        FittingRect(\Self.commentLabel/*, cache: sizesCache*/, id: 14) {
-            Top().offset(4)
-            CenterX()
-        }.constraints(\Self.contentDomainLabel.frame, viewID: 9) {
-            MaxY.Align.MinY()
-        }
-        FittingRect(\Self.shareLabel/*, cache: sizesCache*/, id: 11) {
-            Top().offset(4)
-            Right()
-        }.constraints(\Self.contentDomainLabel.frame, viewID: 9) {
-            MaxY.Align.MinY()
-        }
+            FittingRect(\LayoutCellContent.contentTitleLabel/*, cache: sizesCache*/, id: 8) {
+                Top().offset(4)
+                Left()
+            }.constraints(\LayoutCellContent.posterCommentLabel.frame, viewID: 6) {
+                MinY.Align.MaxY()
+            }
+            FittingRect(\LayoutCellContent.contentDomainLabel/*, cache: sizesCache*/, id: 9) {
+                Top()
+                Left()
+            }.constraints(\LayoutCellContent.contentTitleLabel.frame, viewID: 8) {
+                MinY.Align.MaxY()
+            }
         }
         Group {
-        Rect(\Self.actorImageView.frame/*, cache: sizesCache*/, id: 12) {
-            Width.Constant(30)
-            Height.Constant(30)
-            Top().offset(4)
-            Left()
-        }.constraints(\Self.likeLabel.frame, viewID: 10) {
-            MaxY.Align.MinY()
+            FittingRect(\LayoutCellContent.likeLabel/*, cache: sizesCache*/, id: 10) {
+                Top().offset(4)
+                Left()
+            }.constraints(\LayoutCellContent.contentDomainLabel.frame, viewID: 9) {
+                MinY.Align.MaxY()
+            }
+            FittingRect(\LayoutCellContent.commentLabel/*, cache: sizesCache*/, id: 14) {
+                Top().offset(4)
+                CenterX()
+            }.constraints(\LayoutCellContent.contentDomainLabel.frame, viewID: 9) {
+                MinY.Align.MaxY()
+            }
+            FittingRect(\LayoutCellContent.shareLabel/*, cache: sizesCache*/, id: 11) {
+                Top().offset(4)
+                Right()
+            }.constraints(\LayoutCellContent.contentDomainLabel.frame, viewID: 9) {
+                MinY.Align.MaxY()
+            }
         }
-        FittingRect(\Self.actorCommentLabel/*, cache: sizesCache*/, id: 13) {
-            CenterY()
-            Left()
-        }.constraints(\Self.actorImageView.frame, viewID: 12) {
-            CenterY()
-            MaxX.Limit.MinX()
-        }
+        Group {
+            Rect(\LayoutCellContent.actorImageView.frame/*, cache: sizesCache*/, id: 12) {
+                Width.Constant(30)
+                Height.Constant(30)
+                Top().offset(4)
+                Left()
+            }.constraints(\LayoutCellContent.likeLabel.frame, viewID: 10) {
+                MinY.Align.MaxY()
+            }
+            FittingRect(\LayoutCellContent.actorCommentLabel/*, cache: sizesCache*/, id: 13) {
+                CenterY()
+                Left()
+            }.constraints(\LayoutCellContent.actorImageView.frame, viewID: 12) {
+                CenterY()
+                MinX.Limit.MaxX()
+            }
         }
     }
 }
